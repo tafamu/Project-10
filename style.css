@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+body::-webkit-scrollbar{
+    width: 12px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+body::-webkit-scrollbar-thumb{
+    width: 12px;
+    background-color: red;
+    border-radius: 6px;
+}
+body::-webkit-scrollbar-corner{
+    background-color: transparent;
+}
+button{
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid red;
+    background-color: transparent;
+    color: red;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 300ms,background-color 300ms;
+}
+button:hover{
+    background-color: red;
+    color: white;
+    transform: scale(1.1);
+}
+.controls{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+}
+.menu-container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+}
+.kahvalti_menu,.tatli_menu,.icecek_menu,.yemek_menu{
+    position: absolute;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    margin-top: 20px;
+    padding-bottom: 40px;
+}
+.menu-item{
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    transition: transform 300ms;
+}
+.menu-item:hover{
+    transform: scale(1.05);
+}
+.item-image{
+    object-fit: cover;
+    object-position: center;
+    width: 240px;
+    height: 160px;
+    max-width: 240px;
+    max-height: 160px;
+}
+.title-price{
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+.title{
+    text-align: center;
+}
+.price{
+    text-align: center;
+}
+@media only screen and (max-width: 900px){
+    .menu-container{
+        width: 100%;
+        margin-left: 20px;
+    }
+    .kahvalti_menu,.tatli_menu,.icecek_menu,.yemek_menu{
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+    .item-image{
+        width: 140px;
+        height: 80px;
+    }
+    button{
+        max-width: 60px;
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width: 900px) and (min-height:1000px){
+    .menu-container{
+        width: 100%;
+        margin-left: 20px;
+    }
+    .kahvalti_menu,.tatli_menu,.icecek_menu,.yemek_menu{
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+    .item-image{
+        width: 140px;
+        height: 80px;
+    }
+    button{
+        max-width: 60px;
+        font-size: 10px;
+    }
+}
